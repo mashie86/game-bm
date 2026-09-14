@@ -13,6 +13,18 @@
 </head>
 <body>
 
+<!-- Lapisan hiasan terapung (dekoratif sahaja, tidak boleh diklik) -->
+<div class="hiasan-langit" aria-hidden="true">
+  <span class="hiasan hiasan-1">☁️</span>
+  <span class="hiasan hiasan-2">⭐</span>
+  <span class="hiasan hiasan-3">🎈</span>
+  <span class="hiasan hiasan-4">☁️</span>
+  <span class="hiasan hiasan-5">✨</span>
+  <span class="hiasan hiasan-6">🎈</span>
+  <span class="hiasan hiasan-7">⭐</span>
+</div>
+<div class="confetti-lapisan" id="confetti-lapisan" aria-hidden="true"></div>
+
 <div id="app">
 
   <!-- SKRIN 1: SPLASH -->
@@ -31,7 +43,7 @@
     <div class="topbar">
       <button class="btn-ikon" id="btn-menu-reset" title="Set semula progress">🔄</button>
       <h2 class="topbar-tajuk">Pilih Tahap</h2>
-      <span class="btn-ikon" style="visibility:hidden">🔄</span>
+      <button class="btn-ikon" id="btn-bunyi-togol" title="Hidup/matikan bunyi">🔊</button>
     </div>
     <div class="menu-wrap">
       <button class="kad-tahap kad-tahap1" data-tahap="tahap1">
@@ -127,6 +139,7 @@
 <script src="js/data/padanan.js"></script>
 <script src="js/data/levels.js"></script>
 <script src="js/storage.js"></script>
+<script src="js/sound.js"></script>
 <script src="js/game.js"></script>
 <script src="js/app.js"></script>
 </body>

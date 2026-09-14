@@ -1,6 +1,6 @@
 // Service Worker - Game BM Hebat
 // Naikkan nombor versi ini setiap kali fail app dikemaskini supaya cache lama dibersihkan.
-const VERSI_CACHE = 'bmgame-v1';
+const VERSI_CACHE = 'bmgame-v2';
 
 const FAIL_UTAMA = [
   './',
@@ -11,6 +11,7 @@ const FAIL_UTAMA = [
   './js/data/padanan.js',
   './js/data/levels.js',
   './js/storage.js',
+  './js/sound.js',
   './js/game.js',
   './js/app.js',
   './manifest.webmanifest',
