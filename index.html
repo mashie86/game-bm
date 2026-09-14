@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Game BM Hebat</title>
+<meta name="description" content="Permainan interaktif Bahasa Melayu untuk murid sekolah rendah - Tahap 1 & Tahap 2">
+<meta name="theme-color" content="#ff6b6b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- SKRIN 1: SPLASH -->
+  <section class="skrin skrin-aktif" id="skrin-splash">
+    <div class="splash-wrap">
+      <div class="splash-emoji">📚✨</div>
+      <h1 class="tajuk-app">Game BM Hebat</h1>
+      <p class="sub-tajuk">Permainan Bahasa Melayu untuk Tahap 1 &amp; Tahap 2</p>
+      <button class="btn btn-besar btn-utama" id="btn-mula">Mula Bermain</button>
+      <button class="btn btn-kecil" id="btn-pasang" hidden>⬇️ Pasang Aplikasi</button>
+    </div>
+  </section>
+
+  <!-- SKRIN 2: MENU UTAMA (PILIH TAHAP) -->
+  <section class="skrin" id="skrin-menu">
+    <div class="topbar">
+      <button class="btn-ikon" id="btn-menu-reset" title="Set semula progress">🔄</button>
+      <h2 class="topbar-tajuk">Pilih Tahap</h2>
+      <span class="btn-ikon" style="visibility:hidden">🔄</span>
+    </div>
+    <div class="menu-wrap">
+      <button class="kad-tahap kad-tahap1" data-tahap="tahap1">
+        <span class="kad-emoji">1️⃣</span>
+        <span class="kad-nama">TAHAP 1</span>
+        <span class="kad-ket">Tahun 1, 2 &amp; 3</span>
+        <span class="kad-bintang" id="bintang-tahap1">⭐ 0 / 30</span>
+      </button>
+      <button class="kad-tahap kad-tahap2" data-tahap="tahap2">
+        <span class="kad-emoji">2️⃣</span>
+        <span class="kad-nama">TAHAP 2</span>
+        <span class="kad-ket">Tahun 4, 5 &amp; 6</span>
+        <span class="kad-bintang" id="bintang-tahap2">⭐ 0 / 33</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SKRIN 3: PETA LEVEL -->
+  <section class="skrin" id="skrin-peta">
+    <div class="topbar">
+      <button class="btn-ikon" id="btn-peta-balik">⬅️</button>
+      <h2 class="topbar-tajuk" id="peta-tajuk">Tahap 1</h2>
+      <span class="btn-ikon" style="visibility:hidden">⬅️</span>
+    </div>
+    <div class="peta-wrap" id="peta-senarai"></div>
+  </section>
+
+  <!-- SKRIN 4: PERMAINAN (SOALAN) -->
+  <section class="skrin" id="skrin-game">
+    <div class="topbar">
+      <button class="btn-ikon" id="btn-game-keluar">✖️</button>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-track"><div class="progress-bar-isi" id="progress-isi"></div></div>
+        <span class="progress-teks" id="progress-teks">Soalan 1/10</span>
+      </div>
+      <span class="skor-semasa" id="skor-semasa">⭐0</span>
+    </div>
+
+    <div class="game-kad" id="game-kad">
+      <p class="topik-label" id="topik-label"></p>
+      <h3 class="soalan-teks" id="soalan-teks"></h3>
+
+      <!-- kawasan MCQ -->
+      <div class="pilihan-grid" id="pilihan-grid"></div>
+
+      <!-- kawasan SUSUN AYAT -->
+      <div class="susun-wrap" id="susun-wrap" hidden>
+        <div class="susun-jawapan" id="susun-jawapan"></div>
+        <div class="susun-token-bank" id="susun-token-bank"></div>
+        <div class="susun-butang-wrap">
+          <button class="btn btn-kecil" id="btn-susun-reset">↺ Set Semula</button>
+          <button class="btn btn-utama" id="btn-susun-hantar">Hantar Jawapan</button>
+        </div>
+      </div>
+
+      <div class="maklum-balas" id="maklum-balas" hidden></div>
+    </div>
+  </section>
+
+  <!-- SKRIN 5: PADANAN PANTAS -->
+  <section class="skrin" id="skrin-padanan">
+    <div class="topbar">
+      <button class="btn-ikon" id="btn-padanan-keluar">✖️</button>
+      <h2 class="topbar-tajuk">🔗 Padanan Pantas</h2>
+      <span class="skor-semasa" id="padanan-skor">0/6</span>
+    </div>
+    <p class="arahan-padanan">Ketik satu kad kiri, kemudian kad kanan yang sepadan.</p>
+    <div class="padanan-wrap">
+      <div class="padanan-lajur" id="padanan-kiri"></div>
+      <div class="padanan-lajur" id="padanan-kanan"></div>
+    </div>
+  </section>
+
+  <!-- SKRIN 6: KEPUTUSAN -->
+  <section class="skrin" id="skrin-keputusan">
+    <div class="keputusan-wrap">
+      <div class="keputusan-emoji" id="keputusan-emoji">🎉</div>
+      <h2 class="keputusan-tajuk" id="keputusan-tajuk">Syabas!</h2>
+      <p class="keputusan-skor" id="keputusan-skor">10 / 10</p>
+      <div class="keputusan-bintang" id="keputusan-bintang">⭐⭐⭐</div>
+      <p class="keputusan-mesej" id="keputusan-mesej"></p>
+      <div class="keputusan-butang">
+        <button class="btn btn-kecil" id="btn-keputusan-peta">Peta Level</button>
+        <button class="btn btn-utama" id="btn-keputusan-ulang">Main Lagi</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/data/tahap1.js"></script>
+<script src="js/data/tahap2.js"></script>
+<script src="js/data/padanan.js"></script>
+<script src="js/data/levels.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/game.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

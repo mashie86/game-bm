@@ -1,0 +1,13 @@
+{
+  "name": "game-bm-hebat",
+  "version": "1.0.0",
+  "description": "Permainan interaktif Bahasa Melayu (Tahap 1 & Tahap 2) untuk sekolah rendah - PWA",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node test/e2e-full.js && node test/e2e-tahap2.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.45.0"
+  }
+}
