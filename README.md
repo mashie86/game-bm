@@ -11,6 +11,8 @@ Permainan web interaktif **Bahasa Melayu** untuk murid sekolah rendah — merang
 - Sistem **bintang & markah**, progress disimpan automatik di dalam peranti (localStorage) — tiada log masuk / pangkalan data diperlukan.
 - **PWA penuh**: `manifest.webmanifest` + Service Worker (`sw.js`) untuk cache & sokongan offline, boleh "Add to Home Screen".
 - Responsif — selesa digunakan di telefon, tablet, mahupun komputer.
+- 🔊 **Bunyi kesan (SFX)** — klik, jawapan betul/salah, buka level, kemenangan — dijana terus dalam pelayar (Web Audio API), **tiada fail audio luar diperlukan**, jadi terus berfungsi offline. Ada butang 🔊/🔇 untuk hidup/matikan (sesuai utk suasana kelas).
+- 🎈 **Visual lebih meriah** — latar belakang beranimasi, hiasan terapung (awan/bintang/belon), animasi confetti bila menang, dan fon yang lebih mesra kanak-kanak.
 
 ## 🗂️ Struktur Fail
 
